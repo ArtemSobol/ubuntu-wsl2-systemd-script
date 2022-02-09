@@ -48,10 +48,8 @@ cd ubuntu-wsl2-systemd-script/
 bash ubuntu-wsl2-systemd-script.sh
 # Enter your password and wait until the script has finished
 ```
-### Then restart the Ubuntu shell and try running systemctl
-```sh
-systemctl
-```
+### Restart the LxssManager in Windows to initialize systemctl with WSL 2.
+![Restart the LxssManager](https://github.com/antonchernik/ubuntu-wsl2-systemd-script/blob/master/lxssmanager.png?raw=true)
 
 ### Helm install
 ```sh

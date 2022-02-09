@@ -65,11 +65,6 @@ sudo apt-get install helm
 sudo apt install -y conntrack
 ```
 
-### Install conntrack
-```sh
-sudo apt install -y conntrack
-```
-
 ### Install microk8s
 ```sh
 sudo snap install microk8s --classic

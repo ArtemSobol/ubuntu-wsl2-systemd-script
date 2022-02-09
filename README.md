@@ -88,9 +88,9 @@ You should create it and add the following lines:
 
 ### Add your user to access the Microk8s without root user permissions
 ```sh
-sudo usermod -a -G microk8s anton
+sudo usermod -a -G microk8s $USER
 mkdir ~/.kube
-sudo chown -f -R anton ~/.kube
+sudo chown -f -R $USER ~/.kube
 newgrp microk8s
 ```
 

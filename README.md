@@ -5,6 +5,9 @@ I am not responsible for broken installations, fights with your roommates and po
 
 Instructions from [the snapcraft forum](https://forum.snapcraft.io/t/running-snaps-on-wsl2-insiders-only-for-now/13033) turned into a script. Thanks to [Daniel](https://forum.snapcraft.io/u/daniel) on the Snapcraft forum! 
 
+Install Ubuntu 22.04 LTS from Widows Store.
+Install Terminal from Windows Store.
+
 ### Install prerequisites
 ```sh
 sudo apt-get install -y \
@@ -43,7 +46,7 @@ sudo usermod -aG docker $USER && newgrp docker
 
 ### Install systemctl
 ```sh
-git https://github.com/antonchernik/ubuntu-wsl2-systemd-script.git
+git clone https://github.com/ArtemSobol/ubuntu-wsl2-systemd-script.git
 cd ubuntu-wsl2-systemd-script/
 bash ubuntu-wsl2-systemd-script.sh
 # Enter your password and wait until the script has finished

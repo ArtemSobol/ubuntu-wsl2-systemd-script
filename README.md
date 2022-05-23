@@ -6,7 +6,36 @@ I am not responsible for broken installations, fights with your roommates and po
 Instructions from [the snapcraft forum](https://forum.snapcraft.io/t/running-snaps-on-wsl2-insiders-only-for-now/13033) turned into a script. Thanks to [Daniel](https://forum.snapcraft.io/u/daniel) on the Snapcraft forum! 
 
 Install Ubuntu 22.04 LTS from Widows Store.
+
 Install Terminal from Windows Store.
+
+```sh
+sudo vi /etc/sudoers
+```
+%sudo ALL=(ALL:ALL) NOPASSWD: ALL
+```sh
+sudo apt update
+```
+```sh
+sudo apt upgrade -y
+```
+```sh
+sudo mkdir /usr/share/ca-certificates/extra
+```
+```sh
+sudo cp /mnt/c/Users/Sobol/Downloads/rootca.crt /usr/share/ca-certificates/extra/rootca.crt
+```
+```sh
+sudo cp /mnt/c/Users/Sobol/Downloads/subordinateca.crt /usr/share/ca-certificates/subordinateca.crt
+```
+```sh
+sudo dpkg-reconfigure ca-certificates
+```
+```sh
+sudo update-ca-certificates
+```
+
+
 
 ### Install prerequisites
 ```sh
@@ -77,7 +106,11 @@ sudo microk8s.status
 sudo microk8s.inspect
 ```
 File "/etc/docker/daemon.json" does not exist.
-You should create it and add the following lines:
+You should create it
+```
+sudo nano /etc/docker/daemon.json
+```
+and add the following lines:
 ```json
 {
   "insecure-registries" : ["localhost:32000"]
@@ -94,7 +127,7 @@ newgrp microk8s
 
 ### Install kubectl
 ```sh
-snap install kubectl --classic
+sudo snap install kubectl --classic
 ```
 
 ### Configure kubectl
@@ -111,6 +144,9 @@ sudo apt install golang-go
 ```
 
 ### Install k9s
+```sh
+sudo apt install make
+```
 ```sh
 cd /tmp
 git clone https://github.com/derailed/k9s.git
